@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 网页标签 -->
+    <link rel="shortcut icon" href="./base/img/favicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="./base/img/favicon.png" type="image/x-icon">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./base/css/style.css">
+    <!-- JS -->
+    <script src="./base/js/script.js"></script>
+
+    <title>Loading ~ ⌛</title>
+</head>
+
+<body>
+    <div id="view">
+        <div id="left-box">
+            <div id="card-box">
+                <div id="card-img">
+                    <img src="./base/img/card/B39-085.png">
+                </div>
+                <div id="info"></div>
+            </div>
+        </div>
+        <div id="center-box">
+            <!-- 玩家信息表 -->
+            <div id="player-1" class="player-box">
+                <!-- 玩家头像 -->
+                <div class="player-img">
+                    <img src="./base/img/favicon.png">
+                </div>
+                <!-- 玩家名 -->
+                <div class="player-name">###</div>
+                <div class="other"></div>
+            </div>
+            <div id="table">
+                
+            </div>
+            <!-- 玩家信息表 -->
+            <div id="player-2" class="player-box">
+                <!-- 玩家头像 -->
+                <div class="player-img">
+                    <img src="./base/img/favicon.png">
+                </div>
+                <!-- 玩家名 -->
+                <div class="player-name">###</div>
+                <div class="other"></div>
+            </div>
+        </div>
+        <div id="right-box">
+
+        </div>
+    </div>
+    
+    <!-- Aplayer -->
+    <link rel="stylesheet" href="./base/css/APlayer.min.css">
+    <script src="./base/js/APlayer.min.js"></script>
+    <div id="aplayer"></div>
+    <script>
+        const ap = new APlayer({
+            container: document.getElementById('aplayer'),
+            fixed: true,
+            loop: 'all',
+            order: 'random',
+            preload: 'auto',
+            volume: 0.7,
+            listFolded: false,
+            // listMaxHeight: ,
+            audio: [{
+                    name: 'So Cute~',
+                    artist: 'Lopu$',
+                    url: './base/music/So Cute~ - Lopu$.mp3',
+                    cover: './base/img/favicon.png'
+                }
+            ]
+        });
+    </script>
+    
+</body>
+
+</html>

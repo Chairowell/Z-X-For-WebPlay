@@ -1,0 +1,166 @@
+/* Reset CSS */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, menu, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+main, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section {
+	display: block;
+}
+/* HTML5 hidden-attribute fix for newer browsers */
+*[hidden] {
+    display: none;
+}
+body {
+	line-height: 1;
+}
+menu, ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* Reset CSS */
+
+/* 全局变量 */
+:root {
+    /* 颜色类 */
+    --theme-color: hsl(205, 22%, 45%);
+    /* 背景类 */
+    --background: url('../img/background/03.png');
+    --bg-gray: hsla(0, 0%, 33%, 0.438);
+    /* 盒类 */
+    --margin: 0.8%;
+    --radius: 0.4vw;
+    --shadow: 0 hsla(0, 0%, 33%, 0);
+    --box-color: hsla(0, 0%, 100%, 0.39);
+}
+/* 全局变量 */
+
+/* 大体布局 */
+body {
+    background-image: var(--background);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+#view {
+    width: 100vw;
+    height: 100vh;
+    background: var(--bg-gray);
+    display: flex;
+    display: -webkit-flex;
+}
+#left-box {
+    order: 1;
+    flex: 1.2;
+    margin: var(--margin);
+}
+#center-box {
+    order: 2;
+    flex: 3;
+    margin: var(--margin) 0;
+}
+#right-box {
+    order: 3;
+    flex: 1.2;
+    margin: var(--margin);
+}
+/* 框体统一样式 */
+#left-box,#right-box,.player-box{
+    background: var(--box-color);
+    border-radius: var(--radius);
+    box-shadow: 0 0 var(--shadow);
+}
+/* 大体布局 */
+
+/* LEFT-BOX */
+#card-img{
+    float: left;
+    width: 60%;
+}
+#card-img img{
+    width: 100%;
+}
+/* LEFT-BOX */
+
+/* CENTER-BOX */
+#center-box{
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    gap: var(--margin);
+}
+.player-box{
+    width: 100%;
+    height: 10vh;
+}
+.player-img img{
+    width: 4vw;
+    margin: 1vw;
+    border-radius: 100%;
+}
+
+/* CENTER-BOX */
+
+/* 动效 */
+
+/* 死亡 animation: dead 2s forwards; */
+@keyframes dead{
+    from{filter: grayscale(0%);}
+    to{filter: grayscale(100%);}
+}
+/* 动效 */
+
+/* 移动端适配 方法原页面旋转90 */
+@media screen and (max-width: 845px){
+    :root{
+        --radius: 0.4vh;
+    }
+    body{
+        transform: rotate(90deg);
+    }
+    #view {
+        width: 100vh;
+        height: 100vw;
+    }
+    .player-box{
+        width: 100%;
+        height: 10vw;
+    }
+    .player-img img{
+        width: 4vh;
+        margin: 1vw;
+        border-radius: 100%;
+    }
+}
